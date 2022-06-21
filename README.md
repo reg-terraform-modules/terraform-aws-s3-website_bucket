@@ -13,13 +13,21 @@ Generates website s3 buckets.
 ### Resources
 - `aws_s3_bucket`
     - generates the bucket
+- `aws_s3_bucket_acl`
+    - Provides an S3 bucket ACL resource.
+- `aws_s3_bucket_versioning`
+    - Provides a resource for controlling versioning on an S3 bucket. Deleting this resource will either suspend versioning on the associated S3 bucket or simply remove the resource from Terraform state if the associated S3 bucket is unversioned.
+- `aws_s3_bucket_website_configuration`
+    - Provides an S3 bucket website configuration resource.
+- `aws_s3_bucket_policy`
+    - Attaches a policy to an S3 bucket resource.
 
 ## Input variables
 ### Required
 - `bucket_name`
     - defines the name of the bucket
 - `policy_name`
-    - defines the policy to indicate the allowed resource
+    - defines the policy to indicate the allowed resource (.json)
 
 ### Optional (default values used unless specified)
 - `tags`
