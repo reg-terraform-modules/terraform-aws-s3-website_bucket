@@ -37,8 +37,8 @@ Generates website s3 buckets.
     - Canned acl to be used - see https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl for options
     - default: `"public-read"`
 - `enable_versioning`
-    - Boolean for enabling bucket versioning - cannot be turned off once on
-    - default: `false`
+    - String for enabling bucket versioning - cannot be turned off once on, can be suspended
+    - default: `disabled`
 
 
 ## Output variables
@@ -54,7 +54,13 @@ Generates website s3 buckets.
 ## Example use
 The below example generates a bucket using default input where available.
 ```sql
-
+module "bucket_website" {
+  source  = "app.terraform.io/renovasjonsetaten/s3-website_bucket/aws"
+  version = "0.0.3"
+  env                 = var.env
+  bucket_name         = var.bucket_name_prefix
+  bucket_policy       = data.template_file.bucket_policy.rendered
+}
 ```
 
 ## Further work
