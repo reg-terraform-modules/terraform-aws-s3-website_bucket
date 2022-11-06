@@ -9,12 +9,6 @@ variable "bucket_name" {
   type        = string
 }
 
-variable "bucket_policy" {
-  description = "Policy to indicate the allowed resource"
-  type        = string
-}
-
-
 #Optional variables - default values used unless others specified:
 
 variable "bucket_acl" {

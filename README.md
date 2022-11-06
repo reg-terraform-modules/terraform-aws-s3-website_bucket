@@ -26,8 +26,6 @@ Generates website s3 buckets.
 ### Required
 - `bucket_name`
     - defines the name of the bucket
-- `policy_name`
-    - defines the policy to indicate the allowed resource (.json)
 
 ### Optional (default values used unless specified)
 - `tags`
@@ -48,18 +46,16 @@ Generates website s3 buckets.
     - `name` of the generated bucket
 - `id`
     - `id` of the generated bucket
-- `website_endpoint`
-    - `website_endpoint` of the generated bucket
 
 ## Example use
 The below example generates a bucket using default input where available.
 ```sql
 module "bucket_website" {
   source  = "app.terraform.io/renovasjonsetaten/s3-website_bucket/aws"
-  version = "0.0.3"
-  env                 = var.env
-  bucket_name         = var.bucket_name_prefix
-  bucket_policy       = data.template_file.bucket_policy.rendered
+  version = "0.0.4"
+  env         = var.env
+  bucket_name = var.bucket_name_prefix
+  tags        = var.resource_tags  
 }
 ```
 

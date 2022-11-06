@@ -1,0 +1,11 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "AllowGetFromS3Key",
+        "Action": "s3:GetObject",
+        "Effect": "Allow",
+        "Resource": "${s3_website_bucket_arn}"
+      }
+    ]
+}
