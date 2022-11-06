@@ -5,7 +5,8 @@
         "Sid": "AllowGetFromS3Key",
         "Action": "s3:GetObject",
         "Effect": "Allow",
-        "Resource": "${s3_website_bucket_arn}"
+        "Resource": "${s3_website_bucket_arn}",
+        "Principal": "*"
       }
     ]
 }
