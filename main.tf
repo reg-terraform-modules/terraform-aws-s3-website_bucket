@@ -1,9 +1,5 @@
-locals {
-  bucket_name = "${var.bucket_name}-${var.env}"
-}
-
 resource "aws_s3_bucket" "this" {
-  bucket = local.bucket_name
+  bucket = var.bucket_name
   tags   = var.tags
 }
 

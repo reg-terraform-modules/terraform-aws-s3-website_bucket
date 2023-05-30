@@ -1,5 +1,5 @@
 locals {
-  s3_website_bucket_arn = join("",["arn:aws:s3:::",var.bucket_name,"-",var.env,"/*"])
+  s3_website_bucket_arn = join("",["arn:aws:s3:::",var.bucket_name,"/*"])
 }
 
 data "template_file" "website_policy" {
