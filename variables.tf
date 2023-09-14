@@ -3,12 +3,6 @@ variable "bucket_name" {
   type        = string
 }
 
-variable "bucket_acl" {
-  description = "Canned ACL - see https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl for options"
-  type        = string
-  default     = "public-read"
-}
-
 variable "enable_versioning" {
   description = "Enable bucket versioning - cannot be turned off once on"
   type        = string
